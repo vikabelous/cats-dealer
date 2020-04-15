@@ -1,13 +1,20 @@
-.row
-  .col-md-2.col-md-offset-5
-    = form_tag(request_path, method: 'post', class: 'form-horizontal center') do
-      %p
-        Select cat type:
-        %br/
-        = select_tag('cats_type', options_for_select(%w(Bengal Abyssin Persian)))
-      %p
-        Select your location:
-        %br/
-        = select_tag('user_location', options_for_select(%w(Lviv Kiev Odessa)))
-      %div= submit_tag 'Send request', class: 'btn btn-default'
-%br/
+= render :partial => 'search_form'
+
+- if @cats.size > 0
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Type
+        %th Price
+        %th Location
+        %th Image
+    %tbody
+      - @cats.each do |cat|
+        %tr
+          %td= cat[:type]
+          %td= cat[:price]
+          %td= cat[:location]
+          %td= image_tag(cat[:image], width: '150px')
+- else
+  %p
+    Sorry, no cats for your location

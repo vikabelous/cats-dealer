@@ -1,0 +1,13 @@
+.row
+  .col-md-2.col-md-offset-5
+    = form_tag(search_path, method: 'get') do
+      %p
+        Select cat type:
+        %br/
+        = select_tag('type', options_for_select(%w(Bengal Abyssin Persian)))
+      %p
+        Select your location:
+        %br/
+        = select_tag('location', options_for_select(%w(Lviv Kiev Odessa)))
+      %div= submit_tag 'Search', class: 'btn btn-default'
+%br/
