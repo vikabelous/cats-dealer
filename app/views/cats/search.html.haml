@@ -1,4 +1,6 @@
-= render :partial => 'search_form'
+= render :partial => 'search_form', locals: { search_params: @search_params }
+
+%h1 Search Results
 
 - if @cats.size > 0
   %table.table.table-striped
@@ -10,11 +12,13 @@
         %th Image
     %tbody
       - @cats.each do |cat|
-        %tr
+        %tr.cat
           %td= cat[:type]
-          %td= cat[:price]
+          %td
+            = cat[:price]
+            - if cat[:price] == @best_offer[:price]
+              %span.badge.badge-success Best Price!
           %td= cat[:location]
-          %td= image_tag(cat[:image], width: '150px')
+          %td= rescue_broken_image(cat[:image])
 - else
-  %p
-    Sorry, no cats for your location
+  .h4 Sorry, no cats for your location. Try searching for a different type or location

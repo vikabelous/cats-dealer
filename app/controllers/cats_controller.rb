@@ -1,13 +1,12 @@
 class CatsController < ApplicationController
   def search
-    return @cats = [] unless search_params?
+    @search_params = {
+      type: params[:type],
+      location: params[:location]
+    }
 
-    @cats = CatsDealers.new.find_offers(params[:type], params[:location])
-  end
+    @cats = CatsDealers.find_offers(@search_params)
 
-  private
-
-  def search_params?
-    params[:type].present? && params[:location].present?
+    @best_offer = @cats.min_by { |offer| offer[:price].to_i }
   end
 end

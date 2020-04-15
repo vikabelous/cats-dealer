@@ -7,6 +7,7 @@ class CatsDealers
         fetch.then(&parse).then(&map)
       rescue RestClient::ExceptionWithResponse => e
         # TODO: handle exception
+        e
       end
 
       def fetch
