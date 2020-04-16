@@ -1,2 +1,55 @@
 @import "bootstrap";
-@import "cats"
+@import "home";
+@import "cats";
+
+html, body {
+  height: 100%;
+}
+
+header {
+  .logo {
+    display: inline-block;
+    padding: 10px 0;
+    color: #222;
+
+    img {
+      display: inline-block;
+      max-width: 30px;
+      margin-right: 10px;
+    }
+
+    h1 {
+      display: inline-block;
+      margin: 0;
+      font-size: 20px;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.gradient-bg {
+  &:after {
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+  }
+}
+
+.page-title {
+  margin: 50px 0 20px;
+}
+
+.full-height {
+  height: 100%;
+}
+
