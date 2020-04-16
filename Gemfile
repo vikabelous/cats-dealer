@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.7.1'
 
-gem 'rails', '~> 5.1.1'
 gem 'pg'
+gem 'rails', '~> 5.1.1'
 
 gem 'puma'
 gem 'rest-client'
