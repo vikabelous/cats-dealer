@@ -4,7 +4,7 @@ class CatsDealers
   class Base
     class << self
       def offers
-        fetch.then(&:parse).then(&:map)
+        fetch.then(&parse).then(&map)
       rescue RestClient::ExceptionWithResponse => e
         # TODO: handle exception
         e
