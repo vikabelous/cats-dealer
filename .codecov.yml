@@ -1,12 +1,17 @@
 codecov:
   require_ci_to_pass: yes
 
+ignore:
+  - "gems"
+
 coverage:
   precision: 2
   round: down
   range: "90...100"
 
 parsers:
+  v1:
+    include_full_missed_files: true
   gcov:
     branch_detection:
       conditional: yes

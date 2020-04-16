@@ -42,9 +42,7 @@ jobs:
 
       - name: Upload Codecov report
         if: always()
-        run: |
-          ls coverage
-          bash <(curl -s https://codecov.io/bash) -v
+        run: bash <(curl -s https://codecov.io/bash)
 
   rubocop:
     runs-on: ubuntu-latest
