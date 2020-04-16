@@ -231,6 +231,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.1)
     sysexits (1.2.0)
     temple (0.8.2)
     thor (0.20.3)
@@ -282,6 +283,7 @@ DEPENDENCIES
   rubocop-rspec (~> 1.38.0)
   sass-rails
   simplecov
+  sqlite3
   turbolinks
   uglifier
   vcr
