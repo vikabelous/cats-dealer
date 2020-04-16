@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin19.4.0 x86_64) ruby/2.7.1p83
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - nh7b1g9g23.execute-api.us-west-2.amazonaws.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2131'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 16 Apr 2020 20:39:13 GMT
+      X-Amzn-Requestid:
+      - 4818e7c7-2418-47ae-afd6-ec3aa5f7acb6
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Amz-Apigw-Id:
+      - LGNRwFzSPHcFuUA=
+      X-Amzn-Trace-Id:
+      - Root=1-5e98c271-f6e81d2a768b2f3aefa3e82c;Sampled=0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1b0117d337408839a32bf2a49b55b3f1.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - AMS54-C1
+      X-Amz-Cf-Id:
+      - 1Gn_MmyhJAm945Neah7nN6RPvb6-kQ3nG2j8ZR-kgdn2WbxLmzzIpA==
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?>
+    http_version: null
+  recorded_at: Thu, 16 Apr 2020 20:39:13 GMT
+recorded_with: VCR 5.1.0
