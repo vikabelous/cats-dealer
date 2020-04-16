@@ -35,13 +35,21 @@ describe CatsController do
     end
 
     context 'when cats offers were found' do
-      it 'assigns cats' do
-        get :search
-
-        expect(assigns(:cats)).to eq(cats)
+      let(:expected_cats) do
+        [
+          {type: 'cat_2', location: 'kyiv', price: 10},
+          {type: 'cat_1', location: 'lviv', price: 30},
+          {type: 'cat_3', location: 'odesa', price: 40}
+        ]
       end
 
-      it 'assigns best offer' do
+      it 'sort ofers by price and assigns to @cats' do
+        get :search
+
+        expect(assigns(:cats)).to eq(expected_cats)
+      end
+
+      it 'assigns @best_offer' do
         get :search
 
         expect(assigns(:best_offer)).to eq(best_offer)

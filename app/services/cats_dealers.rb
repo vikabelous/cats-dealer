@@ -3,9 +3,14 @@ class CatsDealers
 
   class << self
     def find_offers(search_params)
+      return [] if search_params.empty?
+
       all_offers.select do |offer|
-        offer[:type] == search_params[:type] &&
-          offer[:location] == search_params[:location]
+        search_params.all? do |param, value|
+          next true if value.empty?
+
+          offer[param] == value
+        end
       end
     end
 

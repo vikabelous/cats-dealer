@@ -27,6 +27,22 @@ describe CatsDealers do
           end
         end
       end
+
+      context 'when one searhc param is specified' do
+        let(:search_params) { {type: 'Abyssin', location: ''} }
+        let(:expected_results) do
+          [
+            {type: 'Abyssin', location: 'Lviv', price: 500, image: 'https://cat1.jpg'},
+            {type: 'Abyssin', location: 'Lviv', price: '550', image: 'https://cat2.jpg'}
+          ]
+        end
+
+        it 'returns all offers matching this param' do
+          VCR.use_cassette('cats_dealers') do
+            expect(described_class.find_offers(search_params)).to eq(expected_results)
+          end
+        end
+      end
     end
 
     context 'when search params are missing' do
@@ -41,7 +57,7 @@ describe CatsDealers do
   end
 
   describe '.all_offers' do
-    let(:expected_offers) do
+    let(:expected_results) do
       [
         {type: 'Abyssin', location: 'Lviv', price: 500, image: 'https://cat1.jpg'},
         {type: 'Abyssin', location: 'Lviv', price: '550', image: 'https://cat2.jpg'},
@@ -53,7 +69,7 @@ describe CatsDealers do
 
     it 'gets offers from all dealers' do
       VCR.use_cassette('cats_dealers') do
-        expect(described_class.all_offers).to eq(expected_offers)
+        expect(described_class.all_offers).to eq(expected_results)
       end
     end
   end

@@ -1,12 +1,17 @@
 .row
   .col-md-12
     = form_tag(search_path, method: 'get', class: 'search-form form-row') do
-      .form-group.col-md-6
-        %label{:for => 'type'} Select cat type:
-        = select_tag('type', options_for_select(%w(Bengal Abyssin Persian), search_params[:type]), class: 'form-control')
+      .form-group.col-md-4
+        .row
+          %label.col-md-5{ for: 'type' } Select cat type:
+          .col-md-7
+            = cats_types_select_tag(search_params[:type])
 
-      .form-group.col-md-6
-        %label{:for => 'location'} Select your location:
-        = select_tag('location', options_for_select(%w(Lviv Kiev Odessa), search_params[:location]), class: 'form-control')
+      .form-group.col-md-5.offset-md-1
+        .row
+          %label.col-md-5{ for: 'location' } Select your location:
+          .col-md-7
+            = locations_select_tag(search_params[:location])
 
-      %div= submit_tag 'Search', class: 'btn btn-primary'
+      %div.col-md-1.offset-md-1
+        = submit_tag 'Search', class: 'btn btn-primary'
