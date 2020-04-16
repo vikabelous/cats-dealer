@@ -1,13 +1,12 @@
-= render partial: 'search_form', locals: {search_params: @search_params}
-
-- if @search_params.present?
-  %h1 Search Results
+.container
+  .page-title
+    %h3= search_results_title(@search_params)
 
   - if @cats.empty?
     .h4 Sorry, we could not find any cats 😿. Try searching for a different type or location.
   - else
-    %table.table.table-striped
-      %thead
+    %table.table
+      %thead.thead-light
         %tr
           %th Type
           %th Price

@@ -3,21 +3,10 @@ module CatsHelper
     image_tag(url, onerror: "this.src='#{image_path('default_cat')}'")
   end
 
-  def cats_types_select_tag(selected_value)
-    select_tag(
-      'type',
-      options_for_select(t(:cats_types), selected_value),
-      include_blank: '-- Any --',
-      class: 'form-control'
-    )
-  end
+  def search_results_title(search_params)
+    type = search_params[:type].presence || 'All'
+    location = search_params[:location].presence || 'Everywhere'
 
-  def locations_select_tag(selected_value)
-    select_tag(
-      'location',
-      options_for_select(t(:locations), selected_value),
-      include_blank: '-- Any --',
-      class: 'form-control'
-    )
+    "#{type} cats from #{location}"
   end
 end

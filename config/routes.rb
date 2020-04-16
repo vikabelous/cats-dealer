@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'cats#search'
+  root 'home#index'
 
   get :search,  to: 'cats#search'
 end
