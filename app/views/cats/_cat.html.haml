@@ -1,0 +1,19 @@
+.col-md-3
+  .cat.card.bg-light
+    .card-body
+      .card-img.card-img-top
+        = rescue_broken_image_tag(cat[:image])
+      .card-text
+        %h5.card-title= cat[:type]
+        %span
+          %strong Location:
+        = cat[:location]
+        %br
+        %span
+          %strong Price:
+        = cat[:price]
+
+        - if cat[:price] == @best_offer[:price]
+          %span.badge.badge-success
+            %h5 Best Price!
+

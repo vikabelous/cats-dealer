@@ -5,20 +5,5 @@
   - if @cats.empty?
     .h4 Sorry, we could not find any cats 😿. Try searching for a different type or location.
   - else
-    %table.table
-      %thead.thead-light
-        %tr
-          %th Type
-          %th Price
-          %th Location
-          %th Image
-      %tbody
-        - @cats.each do |cat|
-          %tr.cat
-            %td= cat[:type]
-            %td
-              = cat[:price]
-              - if cat[:price] == @best_offer[:price]
-                %span.badge.badge-success Best Price!
-            %td= cat[:location]
-            %td= rescue_broken_image_tag(cat[:image])
+    .cats.row
+      = render partial: 'cat', collection: @cats
