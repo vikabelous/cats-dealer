@@ -5,14 +5,21 @@ on: [push]
 jobs:
   rspec:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11.5
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.7.x
 
-      - name: Install dependencies
-        run: sudo apt-get install sqlite3 libsqlite3-dev
+      - name: Install PostgreSQL 11 client
+        run: sudo apt-get -yqq install libpq-dev
 
       - name: Setup gems cache
         uses: actions/cache@v1

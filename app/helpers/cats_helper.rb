@@ -1,6 +1,6 @@
 module CatsHelper
   def rescue_broken_image_tag(url)
-    image_tag(url, onerror: "this.src='#{image_path('no-image')}'")
+    image_tag(url, onerror: "this.src='#{image_path('no-image.png')}'")
   end
 
   def search_results_title(search_params)

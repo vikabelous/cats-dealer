@@ -1,6 +1,6 @@
 module HomeHelper
   def random_landing_image_tag
-    image_tag("landing-#{rand(1..5)}")
+    image_tag("landing-#{rand(1..5)}.svg")
   end
 
   def cats_types_select_tag
