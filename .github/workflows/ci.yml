@@ -36,6 +36,8 @@ jobs:
         run: bundle exec rake db:setup
 
       - name: Run Tests
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: bundle exec rspec
 
       - name: Upload Codecov report
