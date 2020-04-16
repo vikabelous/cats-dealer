@@ -3,8 +3,8 @@ require 'spec_helper'
 describe CatsHelper do
   describe '#rescue_broken_image_tag' do
     let(:expected_attribute) do
-      'onerror="this.src=&#39;/assets/no-image-4cfb2934b9fb547bac5080984f22599'\
-      'd0a8345287d088431cce98a1cebc330e0.png&#39;"'
+      'onerror="this.src=&#39;/assets/no-image-bfc0927a8b7a2856de2a57b7824c08723fa60'\
+      'f988289df4f25f766779482f19d.svg&#39;"'
     end
 
     it 'returns img tag with default image link onerror' do
