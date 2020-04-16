@@ -1,9 +1,6 @@
 class CatsController < ApplicationController
   def search
-    @search_params = {
-      type: params[:type],
-      location: params[:location]
-    }
+    @search_params = params.permit(:type, :location).to_h.symbolize_keys
 
     @cats = CatsDealers.find_offers(@search_params)
 

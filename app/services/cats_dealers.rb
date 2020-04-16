@@ -11,7 +11,7 @@ class CatsDealers
 
     def all_offers
       DEALERS.each_with_object([]) do |dealer, array|
-        array.concat(dealer.offers)
+        array.concat(dealer.new.offers)
       end
     end
   end

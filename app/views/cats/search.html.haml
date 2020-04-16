@@ -19,6 +19,6 @@
             - if cat[:price] == @best_offer[:price]
               %span.badge.badge-success Best Price!
           %td= cat[:location]
-          %td= rescue_broken_image(cat[:image])
+          %td= rescue_broken_image_tag(cat[:image])
 - else
   .h4 Sorry, we could not find any cats 😿. Try searching for a different type or location.

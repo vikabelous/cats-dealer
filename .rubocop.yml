@@ -24,13 +24,17 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
 
-Metrics/LineLength:
-  Max: 95
+Layout/LineLength:
+  Max: 100
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*_spec.rb
 
 Style/Documentation:
   Enabled: false
 
-Style/PredicateName:
+Naming/PredicateName:
   NamePrefix:
     - is_
     - have_
@@ -57,3 +61,6 @@ RSpec/DescribeClass:
 
 RSpec/DescribeMethod:
   Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4

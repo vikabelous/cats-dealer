@@ -14,7 +14,6 @@ gem 'turbolinks'
 gem 'uglifier'
 
 group :development do
-  gem 'byebug'
   gem 'erb2haml'
   gem 'listen'
   gem 'rubocop', '~> 0.81.0'
@@ -24,6 +23,13 @@ end
 
 group :test do
   gem 'codecov', require: false
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'simplecov', require: false
+  gem 'vcr'
+  gem 'webmock'
+end
+
+group :development, :test do
+  gem 'byebug'
 end
