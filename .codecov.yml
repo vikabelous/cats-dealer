@@ -7,7 +7,11 @@ ignore:
 coverage:
   precision: 2
   round: down
-  range: "90...100"
+  range: "50...100"
+  status:
+    project:
+      default:
+        target: 90%
 
 parsers:
   v1:
