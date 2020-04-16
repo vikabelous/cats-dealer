@@ -9,17 +9,25 @@ AllCops:
     - bin/**/*
     - tmp/**/*
 
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
 Metrics/LineLength:
   Max: 95
 
 Style/Documentation:
-  Enabled: false
-
-Metrics/BlockLength:
-  Enabled: true
-  Max: 200
-
-Style/MultilineBlockChain:
   Enabled: false
 
 Style/PredicateName:

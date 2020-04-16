@@ -6,23 +6,24 @@ gem 'sqlite3'
 gem 'puma'
 gem 'rest-client'
 
-gem 'bootstrap', '~> 4.4.1'
-gem 'coffee-rails', '~> 4.2'
-gem 'haml-rails', '~> 2.0'
+gem 'bootstrap'
+gem 'haml-rails'
 gem 'jquery-rails'
-gem 'sass-rails', '~> 5.0'
-gem 'turbolinks', '~> 5'
-gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails'
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development do
   gem 'byebug'
   gem 'erb2haml'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen'
   gem 'rubocop', '~> 0.81.0'
-  gem 'rubocop-rspec', '~> 1.38', '>= 1.38.1'
-  gem 'web-console', '>= 3.3.0'
+  gem 'rubocop-rspec', '~> 1.38.0'
+  gem 'web-console'
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.6.0'
+  gem 'codecov', require: false
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
 end

@@ -38,6 +38,9 @@ jobs:
       - name: Run Tests
         run: bundle exec rspec
 
+      - name: Upload Codecov report
+        run: bash <(curl -s https://codecov.io/bash)
+
 
   rubocop:
     runs-on: ubuntu-latest

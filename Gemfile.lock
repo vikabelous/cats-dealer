@@ -49,16 +49,14 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.1.1)
-    coffee-rails (4.2.2)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
+    codecov (0.1.16)
+      json
+      simplecov
+      url
     concurrent-ruby (1.1.5)
     crass (1.0.5)
     diff-lcs (1.3)
+    docile (1.3.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erb2haml (0.1.5)
@@ -93,6 +91,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    json (2.3.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -207,6 +206,10 @@ GEM
       sprockets-rails
       tilt
     sexp_processor (4.14.1)
+    simplecov (0.18.5)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+    simplecov-html (0.12.2)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -230,6 +233,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.6)
     unicode-display_width (1.7.0)
+    url (0.3.2)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -243,24 +247,25 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (~> 4.4.1)
+  bootstrap
   byebug
-  coffee-rails (~> 4.2)
+  codecov
   erb2haml
-  haml-rails (~> 2.0)
+  haml-rails
   jquery-rails
-  listen (>= 3.0.5, < 3.2)
+  listen
   puma
   rails (~> 5.1.1)
   rest-client
-  rspec-rails (~> 3.6.0)
+  rspec-rails
   rubocop (~> 0.81.0)
-  rubocop-rspec (~> 1.38, >= 1.38.1)
-  sass-rails (~> 5.0)
+  rubocop-rspec (~> 1.38.0)
+  sass-rails
+  simplecov
   sqlite3
-  turbolinks (~> 5)
-  uglifier (>= 1.3.0)
-  web-console (>= 3.3.0)
+  turbolinks
+  uglifier
+  web-console
 
 BUNDLED WITH
    2.1.2

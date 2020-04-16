@@ -1,7 +1,7 @@
 module Utils
-  def hash_mapper(initial_hash, map)
-    map.each_with_object({}) do |(key, value), mapped_hash|
-      mapped_hash[key] = initial_hash[value]
+  def map_hash(initial_hash, fields_map)
+    fields_map.transform_values do |source_field|
+      initial_hash[source_field]
     end
   end
 end

@@ -4,6 +4,7 @@
 db/*.sqlite3
 log/
 tmp/
+coverage/
 
 vendor
 

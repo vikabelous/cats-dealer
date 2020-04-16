@@ -20,7 +20,7 @@ class CatsDealers
 
       def map
         proc do |parsed_data|
-          parsed_data.map { |item| hash_mapper(item, FIELDS_MAP) }
+          parsed_data.map { |item| map_hash(item, FIELDS_MAP) }
         end
       end
     end
