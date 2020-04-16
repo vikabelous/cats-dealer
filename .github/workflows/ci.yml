@@ -11,9 +11,6 @@ jobs:
         with:
           ruby-version: 2.7.x
 
-      - name: Install dependencies
-        run: sudo apt-get install sqlite3 libsqlite3-dev
-
       - name: Setup gems cache
         uses: actions/cache@v1
         env:
@@ -30,17 +27,12 @@ jobs:
       - name: Install gems
         run: bundle install --jobs 4 --retry 3
 
-      - name: Prepare DB
-        env:
-          RAILS_ENV: test
-        run: bundle exec rake db:setup
-
       - name: Run Tests
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: bundle exec rspec
 
-  rubocop:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -54,5 +46,11 @@ jobs:
       - name: Install rubocop-rspec
         run: gem install rubocop-rspec -v 1.38.0
 
+      - name: Install haml-lint
+        run: gem install haml-lint
+
       - name: Run rubocop
         run: rubocop
+
+      - name: Run haml-lint
+        run: haml-lint app/views/
