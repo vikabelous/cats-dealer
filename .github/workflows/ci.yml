@@ -40,10 +40,6 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: bundle exec rspec
 
-      - name: Upload Codecov report
-        if: always()
-        run: bash <(curl -s https://codecov.io/bash)
-
   rubocop:
     runs-on: ubuntu-latest
     steps:
