@@ -12,8 +12,10 @@ describe CatsController do
 
     let(:best_offer) { {type: 'cat_2', location: 'kyiv', price: 10} }
 
+    let(:cats_dealers) { double(CatsDealers, find_offers: cats) }
+
     before do
-      allow(CatsDealers).to receive(:find_offers).and_return(cats)
+      allow(CatsDealers).to receive(:new).and_return(cats_dealers)
     end
 
     context 'when search params present' do

@@ -13,8 +13,6 @@ class CatsDealers
 
     private
 
-    attr_reader :parser
-
     def fetch
       RestClient.get(self.class::RESOURCE_URL).body
     end
@@ -23,6 +21,14 @@ class CatsDealers
       proc do |raw_data|
         parser.run(raw_data)
       end
+    end
+
+    def map
+      raise 'map should be defined in child class'
+    end
+
+    def parser
+      raise 'parser should be defined in child class'
     end
   end
 end

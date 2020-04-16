@@ -9,8 +9,10 @@ class CatsDealers
       image: 'image'
     }.freeze
 
-    def initialize
-      @parser = Parsers::JSONParser.new
+    private
+
+    def parser
+      Parsers::JSONParser.new
     end
 
     def map

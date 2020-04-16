@@ -2,7 +2,7 @@ class CatsController < ApplicationController
   before_action :set_search_params, only: [:search]
 
   def search
-    @cats = CatsDealers.find_offers(@search_params).sort_by { |offer| offer[:price].to_i }
+    @cats = CatsDealers.new.find_offers(@search_params).sort_by { |offer| offer[:price].to_i }
 
     @best_offer = @cats.first
   end
