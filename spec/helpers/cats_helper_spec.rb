@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe CatsHelper do
   describe '#rescue_broken_image_tag' do
