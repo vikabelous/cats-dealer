@@ -62,7 +62,7 @@ jobs:
         run: gem install rubocop-rspec -v 1.38.0
 
       - name: Install haml-lint
-        run: gem install haml-lint
+        run: gem install haml_lint -v 0.35.0
 
       - name: Run rubocop
         run: rubocop

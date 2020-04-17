@@ -271,7 +271,7 @@ DEPENDENCIES
   byebug
   codecov
   haml-rails
-  haml_lint
+  haml_lint (~> 0.35.0)
   jquery-rails
   listen
   pg

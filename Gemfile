@@ -16,7 +16,7 @@ gem 'turbolinks'
 gem 'uglifier'
 
 group :development do
-  gem 'haml_lint', require: false
+  gem 'haml_lint', '~> 0.35.0', require: false
   gem 'listen'
   gem 'rubocop', '~> 0.81.0'
   gem 'rubocop-rspec', '~> 1.38.0'
