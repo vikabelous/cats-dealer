@@ -1,0 +1,120 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin19.3.0 x86_64) ruby/2.7.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - nh7b1g9g23.execute-api.us-west-2.amazonaws.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2018'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 16 Apr 2020 11:23:22 GMT
+      X-Amzn-Requestid:
+      - 32d00633-3382-43f6-9594-6d6144ffba5a
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Amz-Apigw-Id:
+      - LE72sFaFPHcFS7g=
+      X-Amzn-Trace-Id:
+      - Root=1-5e98402a-f909b28e0b6302f437d762f0;Sampled=0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 39890eb6fee7152007acf27e00943abf.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - Sl9EQvQ-X3jSxXS2d4pxRI4R7dYMsjEmeiG17ofklVAoEPLckqThUw==
+    body:
+      encoding: UTF-8
+      string: '[
+        {"name":"Abyssin","price":500,"location":"Lviv","image":"https://cat1.jpg"},
+        {"name":"Abyssin","price":"550","location":"Lviv","image":"https://cat2.jpg"},
+        {"name":"American Curl","price":450,"location":"Odessa","image":"https://cat3.jpg"}
+      ]'
+    http_version: null
+  recorded_at: Thu, 16 Apr 2020 11:23:23 GMT
+- request:
+    method: get
+    uri: https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin19.3.0 x86_64) ruby/2.7.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - nh7b1g9g23.execute-api.us-west-2.amazonaws.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2131'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 16 Apr 2020 11:23:24 GMT
+      X-Amzn-Requestid:
+      - 2d87bcc6-7637-4281-ac6b-72c5a22a7204
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Amz-Apigw-Id:
+      - LE723HckvHcFVtQ=
+      X-Amzn-Trace-Id:
+      - Root=1-5e98402b-376cd7480e8302e002801038;Sampled=0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4cb16ea6a84fa64395352e03f53b5e8f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - j8-v7BrmgEvP0akMhNzpTpb15JmYEXxeLSC0f0ODV4QBAVkgE_lvFA==
+    body:
+      encoding: UTF-8
+      string:
+        <?xml version="1.0" encoding="UTF-8"?>
+        <cats>
+          <cat>
+            <title>Bengal</title>
+            <cost>800</cost>
+            <location>Kyiv</location>
+            <img>https://cat4.jpg</img>
+          </cat>
+          <cat>
+            <title>Bengal</title>
+            <cost>600</cost>
+            <location>Kyiv</location>
+            <img>https://cat5.jpg</img>
+          </cat>
+        </cats>
+    http_version: null
+  recorded_at: Thu, 16 Apr 2020 11:23:24 GMT
+recorded_with: VCR 5.1.0

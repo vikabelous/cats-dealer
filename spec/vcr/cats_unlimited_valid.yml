@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin19.4.0 x86_64) ruby/2.7.1p83
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - nh7b1g9g23.execute-api.us-west-2.amazonaws.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2018'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 16 Apr 2020 20:32:15 GMT
+      X-Amzn-Requestid:
+      - 34d1f238-db55-4d2b-b815-e0bfe021f12b
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Amz-Apigw-Id:
+      - LGMQWGJHPHcFn0Q=
+      X-Amzn-Trace-Id:
+      - Root=1-5e98c0ce-d4c12bb0df0a880015532f60;Sampled=0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6642832e0f3e501fb9fdc5f35d4351d8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - AMS54-C1
+      X-Amz-Cf-Id:
+      - v7eMouQGTbRmZ9cxbkXsNKU4o_fGhl0amf_vSNvl4mBQSdUMgelMgA==
+    body:
+      encoding: UTF-8
+      string: '[
+        {"name":"Abyssin","price":500,"location":"Lviv","image":"https://cat1.jpg"},
+        {"name":"Abyssin","price":"550","location":"Lviv","image":"https://cat2.jpg"}
+      ]'
+    http_version: null
+  recorded_at: Thu, 16 Apr 2020 20:32:15 GMT
+recorded_with: VCR 5.1.0

@@ -1,22 +1,37 @@
 source 'https://rubygems.org'
 
+ruby '2.7.1'
+
+gem 'pg'
 gem 'rails', '~> 5.1.1'
-gem 'sqlite3'
 
 gem 'puma'
 gem 'rest-client'
 
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'coffee-rails', '~> 4.2'
-gem 'sass-rails', '~> 5.0'
-gem 'turbolinks', '~> 5'
-gem 'uglifier', '>= 1.3.0'
+gem 'bootstrap'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'sass-rails'
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'web-console', '>= 3.3.0'
+  gem 'haml_lint', '~> 0.35.0', require: false
+  gem 'listen'
+  gem 'rubocop', '~> 0.81.0'
+  gem 'rubocop-rspec', '~> 1.38.0'
+  gem 'web-console'
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.6.0'
+  gem 'codecov', require: false
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
+  gem 'vcr'
+  gem 'webmock'
+end
+
+group :development, :test do
+  gem 'byebug'
 end

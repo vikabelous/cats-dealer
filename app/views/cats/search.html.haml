@@ -1,0 +1,9 @@
+.container
+  .page-title
+    %h3= search_results_title(@search_params)
+
+  - if @cats.empty?
+    .h4 Sorry, we could not find any cats 😿. Try searching for a different type or location.
+  - else
+    .cats.row
+      = render partial: 'cat', collection: @cats

@@ -1,0 +1,14 @@
+.row
+  .col-md-12
+    = form_tag(search_path, method: 'get', class: 'search-form') do
+      .form-group.row
+        %label.col-md-4.col-form-label{ for: 'type' } Select cat type:
+        .col-md-8
+          = cats_types_select_tag
+
+      .form-group.row
+        %label.col-md-4.col-form-label{ for: 'location' } Select your location:
+        .col-md-8
+          = locations_select_tag
+
+      = submit_tag '😻 Find me a cat!', class: 'btn btn-success'

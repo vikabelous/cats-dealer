@@ -1,3 +1,10 @@
+.byebug_history
+.DS_Store
+
 db/*.sqlite3
 log/
 tmp/
+coverage/
+
+vendor
+

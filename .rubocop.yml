@@ -9,24 +9,36 @@ AllCops:
     - bin/**/*
     - tmp/**/*
 
-Metrics/LineLength:
-  Max: 95
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 100
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*_spec.rb
 
 Style/Documentation:
   Enabled: false
 
-Metrics/BlockLength:
-  Enabled: true
-  Max: 200
-
-Style/MultilineBlockChain:
-  Enabled: false
-
-Style/PredicateName:
+Naming/PredicateName:
   NamePrefix:
     - is_
     - have_
-  NamePrefixBlacklist:
+  ForbiddenPrefixes:
     - is_
     - have_
 
@@ -49,3 +61,6 @@ RSpec/DescribeClass:
 
 RSpec/DescribeMethod:
   Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4

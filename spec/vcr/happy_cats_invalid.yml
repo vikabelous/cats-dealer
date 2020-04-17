@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin19.4.0 x86_64) ruby/2.7.1p83
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - nh7b1g9g23.execute-api.us-west-2.amazonaws.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2131'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 16 Apr 2020 20:39:14 GMT
+      X-Amzn-Requestid:
+      - 58644047-e0c8-4e96-b772-063cae635b30
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Amz-Apigw-Id:
+      - LGNR8HcdPHcFfnw=
+      X-Amzn-Trace-Id:
+      - Root=1-5e98c272-35207f2addafe87a9db9f1f2;Sampled=0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fe106b75368b4a44b0461d7e712cd360.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - AMS54-C1
+      X-Amz-Cf-Id:
+      - G5w-7gfuacyrOpaFkZA87oeMdkryJRXFrmQtRejie4FOyUZ36Fumdw==
+    body:
+      encoding: UTF-8
+      string:
+        <tag></tag>
+        <cats>
+          <cat>
+            <title>American Curl</title>
+            <cost>650</cost>
+            <location>Odessa</location>
+            <img>https://cat1.jpg</img>
+          </cat>
+          <cat>
+            <title>Bengal</title>
+            <cost>800</cost>
+            <location>Odessa</location>
+            <img>https://cat2.jpg</img>
+          </cat>
+        </cats>
+    http_version: null
+  recorded_at: Thu, 16 Apr 2020 20:39:14 GMT
+recorded_with: VCR 5.1.0

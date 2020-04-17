@@ -5,33 +5,67 @@ on: [push]
 jobs:
   rspec:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11.5
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
-      - name: Install dependencies
-        run: sudo apt-get install sqlite3 libsqlite3-dev
+          ruby-version: 2.7.1
+
+      - name: Install PostgreSQL 11 client
+        run: sudo apt-get -yqq install libpq-dev
+
+      - name: Setup gems cache
+        uses: actions/cache@v1
+        env:
+          cache-name: cache-gems
+        with:
+          path: gems
+          key: ${{ runner.os }}-gemlock-${{ hashFiles('Gemfile.lock') }}
+
       - name: Install bundler
-        run: gem install bundler
+        run: |
+          gem install bundler
+          bundle config path gems
+
       - name: Install gems
         run: bundle install --jobs 4 --retry 3
+
       - name: Prepare DB
         env:
           RAILS_ENV: test
         run: bundle exec rake db:setup
+
       - name: Run Tests
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: bundle exec rspec
-  rubocop:
+
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
+          ruby-version: 2.7.1
+
       - name: Install rubocop
-        run: gem install rubocop -v 0.74.0
+        run: gem install rubocop -v 0.81.0
+
       - name: Install rubocop-rspec
-        run: gem install rubocop-rspec -v 1.36.0
+        run: gem install rubocop-rspec -v 1.38.0
+
+      - name: Install haml-lint
+        run: gem install haml_lint -v 0.35.0
+
       - name: Run rubocop
         run: rubocop
+
+      - name: Run haml-lint
+        run: haml-lint app/views/
